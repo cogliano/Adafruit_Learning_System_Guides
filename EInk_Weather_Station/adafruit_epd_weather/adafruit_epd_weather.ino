@@ -41,7 +41,7 @@ OpenWeatherMapForecastData owfdata[3];
 
 Adafruit_NeoPixel neopixel = Adafruit_NeoPixel(1, NEOPIXELPIN, NEO_GRB + NEO_KHZ800);
 
-  const char *moonphasenames[28] = {
+  const char *moonphasenames[29] = {
     "New Moon",
     "Waxing Crescent",
     "Waxing Crescent",
@@ -64,6 +64,7 @@ Adafruit_NeoPixel neopixel = Adafruit_NeoPixel(1, NEOPIXELPIN, NEO_GRB + NEO_KHZ
     "Waning Gibbous",
     "Waning Gibbous",
     "Last Quarter",
+    "Waning Crescent",
     "Waning Crescent",
     "Waning Crescent",
     "Waning Crescent",
@@ -266,6 +267,7 @@ void displayError(String str)
     gfx.setFont(&FreeSans12pt7b);
     gfx.print(str);
     gfx.display();
+    gfx.setTextWrap(false);
     neopixel.setPixelColor(0, neopixel.Color(0, 0, 0));
     neopixel.show();
 }
@@ -668,4 +670,3 @@ void loop() {
   }
 
 }
-
