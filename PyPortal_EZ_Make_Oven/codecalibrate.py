@@ -4,7 +4,7 @@ import busio
 import digitalio
 from adafruit_mcp9600 import MCP9600
 
-SENSOR_ADDR = 0X60
+SENSOR_ADDR = 0X67
 
 i2c = busio.I2C(board.SCL, board.SDA,frequency=200000)
 sensor = MCP9600(i2c,SENSOR_ADDR,"K")
